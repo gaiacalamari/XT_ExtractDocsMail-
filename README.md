@@ -45,17 +45,3 @@ Filter example
 Attribution & licence
 - Built on the X-Tension API of hmrc/XT_XWF-AutoCTR (Ted Smith / HMRC), which supplies XT_API.pas.
 - Released under the Apache License 2.0, consistent with the upstream project.
-
-# X-Ways-HashExporter Testing
-This X-Ways Forensics extension automates the export of hashes from an image
-While the extension could be run from the X-Ways gui, it can also be run from the command-line.
-
-<code>D:\XWAYS>"c:\Program Files\X-Ways Forensics\xwb64.exe" "NewCase:D:\XWAYS\test" "AddImage:d:\XWAYS\testdisk.img" "AddImage:d:\XWAYS\test2.img" "XT:D:\XWAYS\XT_HashExporter.dll" RVS:~ auto</code>
-
-I thought to automate the process of loading forensic acquisitions, traversing and the Refine Volume Snapshot with a DLG file created by me, useful before exporting documents and mail. To edit the DLG file, go to the xways GUI.
-
-<code>"C:\xwf21.5\xwforensics64.exe" "NewCase:W:\GAIA\xways" "AddImage:L:\Images\.E01" RVS:~ "C:\xwf21.5\XTension\RVS CORRETTO.dlg"</code>
-<code>"C:\xwf21.7\xwforensics64.exe" "NewCase:W:\GAIA\xways" "AddImage:L:\Images\.E01" RVS:~ "C:\xwf21.5\XTension\RVS CORRETTO.dlg"</code>
-
-![2025-10-22 12-24-22_parte1](https://github.com/user-attachments/assets/65f1427c-59be-49f7-80ea-9b0787e1d923)
-![2025-10-22 12-24-22_parte2](https://github.com/user-attachments/assets/a61240a4-7115-4dc4-9b8a-362ca3c874af)
