@@ -6,16 +6,9 @@ An X-Tension for X-Ways Forensics (x64) that exports the files of a forensic ima
 For every file in the volume snapshot it reads the category assigned by X-Ways (XWF_GetItemType) and copies the file's content into a folder structure:
 <code><Root>\<Evidence>\<Category>\<original file path></code>
 
-Category names are not hard-coded: the tool uses whatever category X-Ways returns, so every category present is exported (Documents, Spreadsheets, Presentations, Pictures, Video, E-mail, Archives, "Other/unknown type", etc.), not just a fixed subset. Example output:
+Category names are not hard-coded: the tool uses whatever category X-Ways returns, so every category present is exported (Documents, Spreadsheets, Presentations, Pictures, Video, E-mail, Archives, "Other/unknown type", etc.), not just a fixed subset.
 
-<code>Y:\Export\Disk1\\"Full Path"\report.docx
-      Y:\Export\Disk1\\"Full Path"\budget.xlsx
-      Y:\Export\Disk1\\"Full Path"\slides.pptx
-      Y:\Export\Disk2\\"Full Path"\report.docx
-      Y:\Export\Disk2\\"Full Path"\photo001.jpg
-      Y:\Export\Disk2\\"Full Path"\message.eml</code>
-
-Features:
+# Features:
 - Original path preserved, reconstructed by walking up each item's parents.
 - Long paths (\\?\) handled: no failures at the 260-character limit.
 - Collision-safe: files sharing the same path (e.g. recovered/deleted items) are saved with _<ID> before the extension instead of overwriting.
