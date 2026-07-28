@@ -98,3 +98,9 @@ The compiled `XT_ExtractDocsMail.dll` is distributed via the [Releases](../../re
 - Released under the **Apache License 2.0**, consistent with the upstream project. See `LICENSE` and `NOTICE`.
 
 X-Ways Forensics is a trademark of X-Ways Software Technology AG. This project is an independent third-party X-Tension and is not affiliated with or endorsed by X-Ways Software Technology AG.
+
+## Test images / credits
+
+The images used for testing are **not authored by this project**. They are publicly
+available forensic training images catalogued by The Evidence Locker (an index, not a
+host — https://theevidencelocker.github.io/). Credit goes to their original authors.
