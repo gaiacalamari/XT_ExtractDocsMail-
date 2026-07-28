@@ -1,0 +1,56 @@
+# ---------------------------------------------------------------------------
+# Lazarus / Free Pascal .gitignore
+# ---------------------------------------------------------------------------
+
+# Compiler-generated binaries (safe to delete)
+*.ppu
+*.o
+*.or
+*.a
+*.obj
+*.dbg
+*.compiled
+*.rst
+*.rsj
+*.lrt
+
+# FPC/Lazarus generated build helpers
+ppas.sh
+ppas.bat
+link.res
+link*.res
+heaptrclog.trc
+
+# Unit and backup output directories
+# (paths configurable in Project Options; these are the defaults)
+lib/
+backup/
+__history/
+__recovery/
+
+# Lazarus session / user-specific files
+*.lps
+*.bak
+
+# ---------------------------------------------------------------------------
+# Build output: distribute the DLL via GitHub Releases, not in the source tree.
+# If you deliberately want to commit a built binary, delete the relevant line
+# or force-add it with:  git add -f build/XT_ExtractDocsMail.dll
+# ---------------------------------------------------------------------------
+*.dll
+*.exe
+build/
+
+# ---------------------------------------------------------------------------
+# NEVER commit forensic evidence or test images (data-protection / chain of
+# custody). Use synthetic images or link to public datasets instead.
+# ---------------------------------------------------------------------------
+*.E01
+*.e01
+*.dd
+*.raw
+*.img
+*.aff
+*.aff4
+*.vmdk
+test*/
