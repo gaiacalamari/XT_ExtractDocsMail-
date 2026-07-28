@@ -46,7 +46,7 @@ Attribution & licence
 - Built on the X-Tension API of hmrc/XT_XWF-AutoCTR (Ted Smith / HMRC), which supplies XT_API.pas.
 - Released under the Apache License 2.0, consistent with the upstream project.
 
-# X-Ways-HashExporter-Extension
+# X-Ways-HashExporter Testing
 This X-Ways Forensics extension automates the export of hashes from an image
 While the extension could be run from the X-Ways gui, it can also be run from the command-line.
 
