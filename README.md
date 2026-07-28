@@ -12,15 +12,6 @@ For every file in the volume snapshot it reads the category assigned by X-Ways (
 
 Category names are not hard-coded: the tool uses whatever category X-Ways returns, so **every** category present is exported (Documents, Spreadsheets, Presentations, Pictures, Video, E-mail, Archives, "Other/unknown type", …), not just a fixed subset.
 
-Example output:
-
-```
-Y:\Export\Disk1\Documents\Users\Mario\report.docx
-Y:\Export\Disk1\Spreadsheets\Users\Mario\budget.xlsx
-Y:\Export\Disk2\Pictures\DCIM\photo001.jpg
-Y:\Export\Disk2\E-mail\Inbox\message.eml
-```
-
 ## Usage
 
 ```bat
@@ -92,6 +83,10 @@ XT_ExtractDocsMail/
 ├─ XT_API.pas                # X-Tension API binding (from hmrc/XT_XWF-AutoCTR, unmodified)
 ├─ README.md
 ├─ LICENSE
+├─ gitignore
+├─ build
+    ├─ test E01
+    └─ XT_ExtractDocsMail.dll
 └─ NOTICE
 ```
 
