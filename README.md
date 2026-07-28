@@ -83,9 +83,9 @@ XT_ExtractDocsMail/
 ├─ XT_API.pas                # X-Tension API binding (from hmrc/XT_XWF-AutoCTR, unmodified)
 ├─ README.md
 ├─ LICENSE
-├─ gitignore
+├─ .gitignore
+├─ test E01
 ├─ build
-    ├─ test E01
     └─ XT_ExtractDocsMail.dll
 └─ NOTICE
 ```
