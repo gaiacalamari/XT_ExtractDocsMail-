@@ -35,6 +35,6 @@ XT_CATS	no	Optional filter: comma-separated list of category substrings, lowerca
 Filter example
 <code>set "XT_CATS=document,spreadsheet,presentation,picture,video,mail"</code>
 
-Attribution & licence
+# Attribution & licence
 - Built on the X-Tension API of hmrc/XT_XWF-AutoCTR (Ted Smith / HMRC), which supplies XT_API.pas.
 - Released under the Apache License 2.0, consistent with the upstream project.
