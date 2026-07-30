@@ -92,6 +92,56 @@ XT_ExtractDocsMail/
 
 The compiled `XT_ExtractDocsMail.dll` is distributed via the [Releases](../../releases) page rather than committed to the source tree.
 
+## BitLocker images
+
+X-Ways can unlock BitLocker volumes unattended, so the automated pipeline
+(RVS + this X-Tension) does not stall on the password prompt. This is handled
+entirely by X-Ways, not by the X-Tension. Requires **X-Ways Forensics 21.6 or later**.
+
+### 1. Where to put the keys — `Passwords.txt`
+
+X-Ways reads recovery keys/passwords from a collection file named `Passwords.txt`.
+Two collections exist:
+
+- **General** — `Passwords.txt` in the X-Ways installation folder (next to
+  `xwforensics64.exe`) or in your Windows user-profile folder.
+- **Case-specific** — `Passwords.txt` in the case directory, editable from Case
+  Properties.
+
+For a single automated command that creates the case and adds the image at once
+(`NewCase:` + `AddImage:`), use the **general** collection: it already exists before
+the case is created, so it can be consulted from the first `AddImage:`.
+
+Tip: create the file the first time from the GUI (Case Properties, or the archive-
+processing options dialog) by adding one entry — X-Ways creates it in the right place
+with the right encoding. Then append the remaining keys.
+
+### 2. Key format
+
+- The file must be **UTF-16 encoded** (in Notepad: Save As → Encoding "Unicode").
+  A UTF-8/ANSI file may not be read correctly.
+- **One entry per line.**
+- BitLocker recovery password: 48 digits, 8 groups of 6, hyphen-separated,
+  **no spaces** (no trailing space):
+    062612-026103-175593-225830-027357-086526-362263-513414
+    <another recovery key>
+    <an ordinary password, if any>
+
+### 3. Command
+
+Add `Override:5` to the usual command (`Override:5` = skip the BitLocker prompt +
+try the passwords in `Passwords.txt`):
+
+```bat
+set "XT_OUT=Y:\Export" && "C:\xwf21.7\xwforensics64.exe" "NewCase:W:\xways" "AddImage:Y:\Images\*.E01" Override:5 RVS:~ "XT:C:\xwf21.7\XTension\XT_ExtractDocsMail.dll" auto
+```
+
+When a BitLocker volume is found, X-Ways tries the keys automatically (it also tries
+keys of other already-unlocked BitLocker volumes in the same case first, and handles
+`.BEK` startup-key files found in the evidence). Once a key matches, the volume is
+decrypted and the normal RVS + extraction flow continues unattended. The verified key
+is saved in the evidence object's Description for reference.
+
 ## Attribution & licence
 
 - Built on the X-Tension API of [hmrc/XT_XWF-AutoCTR](https://github.com/hmrc/XT_XWF-AutoCTR) (Ted Smith / HMRC), which supplies `XT_API.pas`.
