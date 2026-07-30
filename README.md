@@ -122,11 +122,7 @@ with the right encoding. Then append the remaining keys.
   A UTF-8/ANSI file may not be read correctly.
 - **One entry per line.**
 - BitLocker recovery password: 48 digits, 8 groups of 6, hyphen-separated,
-  **no spaces** (no trailing space):
-
-  062612-026103-175593-225830-027357-086526-362263-513414
-  <another recovery key>
-  <an ordinary password, if any>
+  **no spaces** (no trailing space)
 
 ### 3. Command
 
